@@ -127,5 +127,8 @@
     <Resource Include="Images\ScreenshotNormal.png" />
     <Resource Include="Images\Status.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\KinectScreenshot-CoordinateMapping-05-42-53.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
