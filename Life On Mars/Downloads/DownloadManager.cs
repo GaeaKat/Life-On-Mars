@@ -11,7 +11,7 @@ namespace Life_On_Mars.Downloads
     {
         public static string BASE_URL = "https://api.nasa.gov/mars-photos/api/v1/";
         public static string API_KEY = "iIWfSm9w9599W0RaKYNT7VqBn8eSQ3vX3Acpuo2B";
-        public static List<Photo> getPhotosBySol(EnumRover rover,EnumCamera camera,int sol,int page=1)
+        public static List<Photo> GetPhotosBySol(EnumRover rover,EnumCamera camera,int sol,int page=1)
         {
             if (!camera.IsEnabledOnRover(rover))
                 throw new ArgumentException("This camera is not available on this rover", "camera");
@@ -24,10 +24,10 @@ namespace Life_On_Mars.Downloads
             request.AddUrlSegment("page", page);
             request.AddUrlSegment("api", API_KEY);
             IRestResponse<PhotoList> response2 = client.Execute<PhotoList>(request);
-            return response2.Data.photos;
+            return response2.Data.Photos;
         }
 
-        public static List<Photo> getPhotosByDate(EnumRover rover, EnumCamera camera, string date, int page = 1)
+        public static List<Photo> GetPhotosByDate(EnumRover rover, EnumCamera camera, string date, int page = 1)
         {
             if (!camera.IsEnabledOnRover(rover))
                 throw new ArgumentException("This camera is not available on this rover", "camera");
@@ -40,7 +40,7 @@ namespace Life_On_Mars.Downloads
             request.AddUrlSegment("page", page);
             request.AddUrlSegment("api", API_KEY);
             IRestResponse<PhotoList> response2 = client.Execute<PhotoList>(request);
-            return response2.Data.photos;
+            return response2.Data.Photos;
         }
     }
 }

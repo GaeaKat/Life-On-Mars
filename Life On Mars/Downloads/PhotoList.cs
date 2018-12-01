@@ -8,6 +8,6 @@ namespace Life_On_Mars.Downloads
 {
     public class PhotoList
     {
-        public List<Photo> photos { get; set; }
+        public List<Photo> Photos { get; set; }
     }
 }

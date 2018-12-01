@@ -8,11 +8,11 @@ namespace Life_On_Mars.Downloads
 {
     public class Photo
     {
-        public int id { get; set; }
-        public int sol { get; set; }
-        public string img_src { get; set; }
-        public string earth_date { get; set; }
-        public object camera { get; set; }
-        public object rover { get; set; }
+        public int Id { get; set; }
+        public int Sol { get; set; }
+        public string ImgSrc { get; set; }
+        public string EarthDate { get; set; }
+        public object Camera { get; set; }
+        public object Rover { get; set; }
     }
 }
