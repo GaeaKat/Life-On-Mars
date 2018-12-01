@@ -18,7 +18,7 @@ namespace Life_On_Mars.Downloads
 
         public override string ToString()
         {
-            return Id.ToString() + " - " + EarthDate;
+            return Rover.Name+ " - "+Id.ToString() + " - " + EarthDate ;
         }
     }
 }
