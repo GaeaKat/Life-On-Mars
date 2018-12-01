@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Life_On_Mars.Downloads;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace Life_On_Mars
     {
         public MainWindow()
         {
+            List<Photo> photos=Downloads.DownloadManager.getPhotosBySol(EnumRover.Curiosity, EnumCamera.MAST, 1000);
             InitializeComponent();
         }
     }
