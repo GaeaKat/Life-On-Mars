@@ -5,8 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Life_On_Mars"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="74" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="102"/>
+        <RadioButton GroupName="rovers" Content="Curiosity" HorizontalAlignment="Left" Height="18" Margin="20,20,0,0" VerticalAlignment="Top" Width="92" x:Name="curiosityRadio" Checked="curiosityRadio_Checked" IsChecked="True" />
+        <RadioButton GroupName="rovers" Content="Opportunity" HorizontalAlignment="Left" Height="18" Margin="20,43,0,0" VerticalAlignment="Top" Width="92" x:Name="opportunityRadio" Checked="opportunityRadio_Checked" />
+        <RadioButton GroupName="rovers" Content="Spirit" HorizontalAlignment="Left" Height="18" Margin="20,66,0,0" VerticalAlignment="Top" Width="92" x:Name="spiritRadio" Checked="spiritRadio_Checked"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="200" Margin="10,209,0,0" Stroke="Black" VerticalAlignment="Top" Width="359" x:Name="cameraRectangle" />
+        <RadioButton GroupName="cameras" Content="FHAZ	Front Hazard Avoidance Camera" HorizontalAlignment="Left" Margin="20,223,0,0" VerticalAlignment="Top" x:Name="cameraFHAZ" Checked="cameraFHAZ_Checked" IsChecked="True"/>
+        <RadioButton GroupName="cameras" Content="RHAZ	Rear Hazard Avoidance Camera" HorizontalAlignment="Left" Margin="20,243,0,0" VerticalAlignment="Top" x:Name="cameraRHAZ" Checked="cameraRHAZ_Checked"/>
+        <RadioButton GroupName="cameras" Content="MAST	Mast Camera" HorizontalAlignment="Left" Margin="20,263,0,0" VerticalAlignment="Top" x:Name="cameraMAST"  Checked="cameraMAST_Checked"/>
+        <RadioButton GroupName="cameras" Content="CHEMCAM	Chemistry and Camera Complex" HorizontalAlignment="Left" Margin="20,283,0,0" VerticalAlignment="Top" x:Name="cameraCHEMCAM"  Checked="cameraCHEMCAM_Checked" />
+        <RadioButton GroupName="cameras" Content="MAHLI	Mars Hand Lens Imager" HorizontalAlignment="Left" Margin="20,303,0,0" VerticalAlignment="Top" x:Name="cameraMAHLI"  Checked="cameraMAHLI_Checked"/>
+        <RadioButton GroupName="cameras" Content="MARDI	Mars Descent Imager" HorizontalAlignment="Left" Margin="20,323,0,0" VerticalAlignment="Top" x:Name="cameraMARDI"  Checked="cameraMARDI_Checked"/>
+        <RadioButton GroupName="cameras" Content="NAVCAM	Navigation Camera" HorizontalAlignment="Left" Margin="20,343,0,0" VerticalAlignment="Top" x:Name="cameraNAVCAM"  Checked="cameraNAVCAM_Checked"/>
+        <RadioButton GroupName="cameras" Content="PANCAM	Panoramic Camera" HorizontalAlignment="Left" Margin="19,363,0,0" VerticalAlignment="Top" x:Name="cameraPANCAM" IsEnabled="False"  Checked="cameraPANCAM_Checked"/>
+        <RadioButton GroupName="cameras" Content="MINITES	Miniature Thermal Emission Spectrometer (Mini-TES)	" HorizontalAlignment="Left" Margin="20,383,0,0" VerticalAlignment="Top" x:Name="cameraMINITES"  Checked="cameraMINITES_Checked" IsEnabled="False"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="115" Margin="10,89,0,0" Stroke="Black" VerticalAlignment="Top" Width="359"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="153,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="solText" Text="1000"  PreviewTextInput="solText_PreviewTextInput"/>
+        <RadioButton GroupName="date_types" Content="Sol" HorizontalAlignment="Left" Margin="20,111,0,0" VerticalAlignment="Top" x:Name="dateSol" IsChecked="True"/>
+        <RadioButton GroupName="date_types" Content="Earth Date" HorizontalAlignment="Left" Margin="20,161,0,0" VerticalAlignment="Top" x:Name="dateEarth"/>
+        <ListBox HorizontalAlignment="Left" Height="344" Margin="369,34,0,0" VerticalAlignment="Top" Width="413" x:Name="photoList" MouseDoubleClick="photoList_MouseDoubleClick"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="374,389,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Next" HorizontalAlignment="Left" Margin="707,389,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="Search" HorizontalAlignment="Left" Margin="277,135,0,0" VerticalAlignment="Top" Width="75" x:Name="Search" Click="Search_Click"/>
+        <Label Content="Page: " HorizontalAlignment="Left" Margin="369,3,0,0" VerticalAlignment="Top" x:Name="labelPage"/>
+        <DatePicker HorizontalAlignment="Left" Margin="153,156,0,0" VerticalAlignment="Top" Width="118" x:Name="datePick"/>
+
     </Grid>
 </Window>

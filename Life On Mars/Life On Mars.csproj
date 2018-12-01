@@ -64,6 +64,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Downloads\Rover.cs" />
     <Compile Include="TempWindow.xaml.cs">
       <DependentUpon>TempWindow.xaml</DependentUpon>
     </Compile>

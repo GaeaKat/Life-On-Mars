@@ -1,4 +1,4 @@
-﻿<Window x:Class="Microsoft.Samples.Kinect.CoordinateMappingBasics.MainWindow"
+﻿<Window x:Class="Microsoft.Samples.Kinect.CoordinateMappingBasics.TempWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Coordinate Mapping Basics" 

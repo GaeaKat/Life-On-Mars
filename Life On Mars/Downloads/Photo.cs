@@ -13,6 +13,12 @@ namespace Life_On_Mars.Downloads
         public string ImgSrc { get; set; }
         public string EarthDate { get; set; }
         public object Camera { get; set; }
-        public object Rover { get; set; }
+        public Rover Rover { get; set; }
+
+
+        public override string ToString()
+        {
+            return Id.ToString() + " - " + EarthDate;
+        }
     }
 }

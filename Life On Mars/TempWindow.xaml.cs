@@ -22,7 +22,7 @@ namespace Microsoft.Samples.Kinect.CoordinateMappingBasics
     /// <summary>
     /// Interaction logic for MainWindow
     /// </summary>
-    public partial class MainWindow : Window, INotifyPropertyChanged
+    public partial class TempWindow : Window, INotifyPropertyChanged,IDisposable
     {
         /// <summary>
         /// Size of the RGB pixel in the bitmap
@@ -63,13 +63,13 @@ namespace Microsoft.Samples.Kinect.CoordinateMappingBasics
         /// Current status text to display
         /// </summary>
         private string statusText = null;
-
+        private Photo currentPhoto = null;
         /// <summary>
         /// Initializes a new instance of the MainWindow class.
         /// </summary>
-        public MainWindow()
+        public TempWindow(Photo photo)
         {
-            
+            currentPhoto = photo;
 
 
             this.kinectSensor = KinectSensor.GetDefault();
@@ -367,9 +367,14 @@ namespace Microsoft.Samples.Kinect.CoordinateMappingBasics
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Photo> photos = Life_On_Mars.Downloads.DownloadManager.GetPhotosBySol(EnumRover.Curiosity, EnumCamera.MAST, 1000);
-            BitmapImage image = new BitmapImage(new Uri(photos[0].ImgSrc, UriKind.Absolute));
+            
+            BitmapImage image = new BitmapImage(new Uri(currentPhoto.ImgSrc, UriKind.Absolute));
             backgroundImage.Source = image;
+        }
+
+        public void Dispose()
+        {
+            this.Close();
         }
     }
 }
