@@ -7,6 +7,7 @@
 namespace Microsoft.Samples.Kinect.CoordinateMappingBasics
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel;
     using System.Diagnostics;
     using System.Globalization;
@@ -14,6 +15,8 @@ namespace Microsoft.Samples.Kinect.CoordinateMappingBasics
     using System.Windows;
     using System.Windows.Media;
     using System.Windows.Media.Imaging;
+    using Life_On_Mars;
+    using Life_On_Mars.Downloads;
     using Microsoft.Kinect;
 
     /// <summary>
@@ -66,6 +69,9 @@ namespace Microsoft.Samples.Kinect.CoordinateMappingBasics
         /// </summary>
         public MainWindow()
         {
+            
+
+
             this.kinectSensor = KinectSensor.GetDefault();
 
             this.multiFrameSourceReader = this.kinectSensor.OpenMultiSourceFrameReader(FrameSourceTypes.Depth | FrameSourceTypes.Color | FrameSourceTypes.BodyIndex);
@@ -135,10 +141,7 @@ namespace Microsoft.Samples.Kinect.CoordinateMappingBasics
                 {
                     this.statusText = value;
 
-                    if (this.PropertyChanged != null)
-                    {
-                        this.PropertyChanged(this, new PropertyChangedEventArgs("StatusText"));
-                    }
+                    this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("StatusText"));
                 }
             }
         }
@@ -360,6 +363,13 @@ namespace Microsoft.Samples.Kinect.CoordinateMappingBasics
         {
             this.StatusText = this.kinectSensor.IsAvailable ? Life_On_Mars.Properties.Resources.RunningStatusText
                                                             : Life_On_Mars.Properties.Resources.SensorNotAvailableStatusText;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<Photo> photos = Life_On_Mars.Downloads.DownloadManager.GetPhotosBySol(EnumRover.Curiosity, EnumCamera.MAST, 1000);
+            BitmapImage image = new BitmapImage(new Uri(photos[0].ImgSrc, UriKind.Absolute));
+            backgroundImage.Source = image;
         }
     }
 }

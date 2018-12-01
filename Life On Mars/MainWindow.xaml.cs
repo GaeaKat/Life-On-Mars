@@ -23,7 +23,7 @@ namespace Life_On_Mars
     {
         public MainWindow()
         {
-            List<Photo> photos=Downloads.DownloadManager.GetPhotosBySol(EnumRover.Curiosity, EnumCamera.MAST, 1000);
+            
             InitializeComponent();
         }
     }

@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Coordinate Mapping Basics" 
         Height="600" Width="700" 
-        Closing="MainWindow_Closing"> 
+        Closing="MainWindow_Closing"
+        Loaded="Window_Loaded"> 
   <Window.Resources>
     <SolidColorBrush x:Key="MediumGreyBrush" Color="#ff6e6e6e" />
     <SolidColorBrush x:Key="KinectPurpleBrush" Color="#ff52318f" />
@@ -50,7 +51,7 @@
     
     <Viewbox Grid.Row="1" HorizontalAlignment="Center">
         <Grid Name="CompositeImage">
-            <Image Source="Images\Background.png" Stretch="UniformToFill" />
+                <Image Stretch="UniformToFill" x:Name="backgroundImage"/>
             <Image Source="{Binding ImageSource}" Stretch="UniformToFill" />
         </Grid>
     </Viewbox>

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -41,6 +42,16 @@ namespace Life_On_Mars.Downloads
             request.AddUrlSegment("api", API_KEY);
             IRestResponse<PhotoList> response2 = client.Execute<PhotoList>(request);
             return response2.Data.Photos;
+        }
+
+        public static string DownloadPhoto(Photo photo)
+        {
+            string fileName = System.IO.Path.GetTempPath() + Guid.NewGuid().ToString() + ".jpg";
+
+            WebClient Client = new WebClient();
+            Client.DownloadFile(photo.ImgSrc, fileName);
+
+            return fileName;
         }
     }
 }
