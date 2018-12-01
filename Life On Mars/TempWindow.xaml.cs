@@ -1,6 +1,7 @@
 ﻿//------------------------------------------------------------------------------
 // <copyright file="MainWindow.xaml.cs" company="Microsoft">
 //     Copyright (c) Microsoft Corporation.  All rights reserved.
+// modified by katrina Swales
 // </copyright>
 //------------------------------------------------------------------------------
 
@@ -20,7 +21,7 @@ namespace Microsoft.Samples.Kinect.CoordinateMappingBasics
     using Microsoft.Kinect;
 
     /// <summary>
-    /// Interaction logic for MainWindow
+    /// Interaction logic for TempWindow
     /// </summary>
     public partial class TempWindow : Window, INotifyPropertyChanged,IDisposable
     {

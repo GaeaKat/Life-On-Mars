@@ -111,6 +111,8 @@ namespace Life_On_Mars
 
                     MinDate = Convert.ToDateTime(example[0].Rover.LandingDate);
                     MaxDate = Convert.ToDateTime(example[0].Rover.MaxDate);
+                    datePick.DisplayDateStart = MinDate;
+                    datePick.DisplayDateEnd = MaxDate;
                     datePick.SelectedDate = MaxDate;
                 }
             }
